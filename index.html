@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja de Joalheria</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <h1>Joias Brilhantes</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('produtos')">Produtos</a></li>
+        <li><a href="#" onclick="showSection('sobre')">Sobre</a></li>
+        <li><a href="#" onclick="showSection('contato')">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="banner">
+    <h2>Descubra as Melhores Joias</h2>
+    <p>Beleza e sofisticação para todos os momentos</p>
+  </section>
+
+  <!-- Seções de conteúdo -->
+  <section id="produtos" class="produtos">
+    <h2>Nosso Catálogo</h2>
+    
+    <div class="produto">
+      <img src="https://via.placeholder.com/300x300?text=Anel+de+Diamante" alt="Anel de Diamante">
+      <h3>Anel de Diamante</h3>
+      <p class="preco">R$ 1.500,00</p>
+      <button>Comprar</button>
+    </div>
+    
+    <div class="produto">
+      <img src="https://via.placeholder.com/300x300?text=Colar+de+Ouro" alt="Colar de Ouro">
+      <h3>Colar de Ouro</h3>
+      <p class="preco">R$ 1.200,00</p>
+      <button>Comprar</button>
+    </div>
+    
+    <div class="produto">
+      <img src="https://via.placeholder.com/300x300?text=Brincos+de+Pérola" alt="Brincos de Pérola">
+      <h3>Brincos de Pérola</h3>
+      <p class="preco">R$ 800,00</p>
+      <button>Comprar</button>
+    </div>
+    
+  </section>
+
+  <!-- Seção Sobre -->
+  <section id="sobre" class="sobre" style="display: none;">
+    <h2>Sobre a Loja</h2>
+    <p>Joias Brilhantes é uma loja especializada em joias finas, com mais de 20 anos de tradição no mercado. Oferecemos peças exclusivas e de alta qualidade para todos os momentos especiais da vida.</p>
+  </section>
+
+  <!-- Seção Contato -->
+  <section id="contato" class="contato" style="display: none;">
+    <h2>Contato</h2>
+    <p>Fale conosco pelo e-mail: <strong>contato@joiasbrilhantes.com.br</strong> ou ligue para: <strong>(11) 1234-5678</strong>.</p>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Joias Brilhantes - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Função para mostrar as seções quando o usuário clicar
+    function showSection(section) {
+      // Esconde todas as seções
+      const sections = document.querySelectorAll('section');
+      sections.forEach(s => s.style.display = 'none');
+
+      // Mostra a seção clicada
+      const activeSection = document.getElementById(section);
+      activeSection.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

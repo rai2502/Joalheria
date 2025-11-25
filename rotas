@@ -1,0 +1,57 @@
+// routes/produtos.js
+const express = require('express');
+const router = express.Router();
+
+// Lista de produtos fictícia (normalmente, isso viria de um banco de dados)
+let produtos = [
+  { id: 1, nome: 'Anel de Diamante', preco: 1500 },
+  { id: 2, nome: 'Colar de Ouro', preco: 1200 },
+  { id: 3, nome: 'Brincos de Pérola', preco: 800 }
+];
+
+// CREATE - Adicionar um novo produto
+router.post('/', (req, res) => {
+  const { nome, preco } = req.body;
+  const novoProduto = {
+    id: produtos.length + 1,
+    nome,
+    preco
+  };
+  produtos.push(novoProduto);
+  res.status(201).json(novoProduto);
+});
+
+// READ - Listar todos os produtos
+router.get('/', (req, res) => {
+  res.status(200).json(produtos);
+});
+
+// READ - Obter um produto específico pelo ID
+router.get('/:id', (req, res) => {
+  const produto = produtos.find(p => p.id === parseInt(req.params.id));
+  if (!produto) return res.status(404).json({ message: 'Produto não encontrado' });
+  res.status(200).json(produto);
+});
+
+// UPDATE - Atualizar um produto
+router.put('/:id', (req, res) => {
+  const produto = produtos.find(p => p.id === parseInt(req.params.id));
+  if (!produto) return res.status(404).json({ message: 'Produto não encontrado' });
+
+  const { nome, preco } = req.body;
+  produto.nome = nome || produto.nome;
+  produto.preco = preco || produto.preco;
+
+  res.status(200).json(produto);
+});
+
+// DELETE - Remover um produto
+router.delete('/:id', (req, res) => {
+  const produtoIndex = produtos.findIndex(p => p.id === parseInt(req.params.id));
+  if (produtoIndex === -1) return res.status(404).json({ message: 'Produto não encontrado' });
+
+  produtos.splice(produtoIndex, 1);
+  res.status(200).json({ message: 'Produto removido com sucesso' });
+});
+
+module.exports = router;

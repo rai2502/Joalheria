@@ -1,0 +1,172 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ecf0f1; /* Cinza claro */
+  color: #2c3e50; /* Texto em cinza escuro para contraste */
+}
+
+header {
+  background-color: #f39c12; /* Dourado */
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style-type: none;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+header nav ul li a:hover {
+  color: #bd8a2b; /* Dourado escuro */
+}
+
+/* Banner */
+.banner {
+  background-color: #f39c12; /* Dourado */
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.banner h2 {
+  font-size: 2.5em;
+}
+
+.banner p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+/* Produtos */
+.produtos {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 20px;
+  flex-wrap: wrap;
+  gap: 20px; /* Espaço entre os produtos */
+}
+
+.produto {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 30%; /* Tamanho reduzido dos produtos */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produto:hover {
+  transform: translateY(-5px); /* Leve movimento para cima */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.produto img {
+  width: 100%; /* Ajusta a largura das imagens */
+  height: 200px;
+  object-fit: cover; /* Para ajustar a imagem dentro do quadrado */
+  border-radius: 5px;
+  margin-top: 15px; /* Espaço acima da imagem */
+}
+
+.produto h3 {
+  font-size: 1.5em;
+  margin: 15px 0;
+}
+
+.produto .preco {
+  color: #f39c12; /* Dourado */
+  font-size: 1.2em;
+}
+
+.produto button {
+  background-color: #f39c12; /* Dourado */
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1em;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.produto button:hover {
+  background-color: #bd8a2b; /* Dourado escuro */
+}
+
+/* Seções de Conteúdo (Sobre e Contato) */
+.sobre, .contato {
+  background-color: #ecf0f1; /* Cinza claro */
+  padding: 40px;
+  margin-top: 30px;
+  border-radius: 8px;
+  display: none;
+}
+
+.sobre h2, .contato h2 {
+  font-size: 2em;
+  color: #2c3e50;
+}
+
+.sobre p, .contato p {
+  font-size: 1.2em;
+  color: #7f8c8d;
+}
+
+/* Rodapé */
+footer {
+  background-color: #f39c12; /* Dourado */
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  font-size: 1em;
+}
+
+/* Responsividade - Tela pequena */
+@media screen and (max-width: 768px) {
+  .produtos {
+    justify-content: center; /* Centraliza os produtos */
+  }
+
+  .produto {
+    width: 45%; /* Diminuir o tamanho dos produtos em telas pequenas */
+  }
+}
+
+/* Responsividade - Tela muito pequena */
+@media screen and (max-width: 480px) {
+  .produto {
+    width: 100%; /* Produtos ocupam toda a largura em telas pequenas */
+    margin-bottom: 20px;
+  }
+}
